@@ -1,0 +1,33 @@
+{% include 'layout.html' %}
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Make a new todo
+    </div>
+    <div class="card-body">
+      <form id="todoForm">
+        <div class="form-group">
+          <label>titulo</label>
+          <input type="text" class="form-control" name="titulo" required>
+        </div>
+        <div class="form-group">
+          <label>Descripción</label>
+          <textarea class="form-control" rows="3" name="descripcion" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>prioridad</label>
+          <select class="form-control" name="prioridad">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary"> Añadir tarea </button>
+        <a href="/todos/todo-page" class="btn btn-success">Volver</a>
+      </form>
+    </div>
+  </div>
+</div>

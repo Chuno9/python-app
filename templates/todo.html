@@ -1,0 +1,56 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            Tareas!
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Lista de tareas
+            </h5>
+            <p class="card-text">
+                informacion de tareas
+            </p>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Info</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for todo in todos %}
+                    {% if todo.complete == False %}
+                    <tr class="pointer">
+                        <td>{{loop.index}}</td>
+                        <td>{{todo.titulo}}</td>
+                        <td>
+                            <button onclick="window.location.href='edit-todo-page/{{todo.id}}'" type="button" 
+                            class="btn btn-info">
+                            Editar 
+                            </button>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr class="pointer alert alert-success">
+                        <td>{{loop.index}}</td>
+                        <td class="strike-trough-td">{{todo.titulo}}</td>
+                        <td>
+                            <button onclick="window.location.href='edit-todo-page/{{todo.id}}'" type="button" 
+                            class="btn btn-info">
+                            Editar 
+                            </button>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="add-todo-page" class="btn btn-primary">Añadir tarea</a>
+
+        </div>
+    </div>
+</div>

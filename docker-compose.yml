@@ -1,0 +1,22 @@
+version: "3"
+services:
+  db_final:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/pgdata
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=manu
+      - POSTGRES_PASSWORD=1234
+      - PGDATA=/var/lib/postgresql/data/pgdata
+  app_final:
+    image: ghcr.io/chuno9/python-app:latest
+    ports:
+      - 8000:8000
+    restart: on-failure
+volumes:
+  postgres_data:
