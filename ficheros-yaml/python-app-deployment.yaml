@@ -13,6 +13,7 @@ spec:
         app: python-app
       annotations:
         instrumentation.opentelemetry.io/inject-python: otel-system/elastic-instrumentation
+    spec:
       containers:
         - name: python-app-container
           image: ghcr.io/chuno9/python-app:latest
