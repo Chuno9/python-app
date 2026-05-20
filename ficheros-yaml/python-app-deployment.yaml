@@ -12,8 +12,7 @@ spec:
       labels:
         app: python-app
       annotations:
-        instrumentation.opentelemetry.io/inject-python: opentelemetry-operator-system/elastic-instrumentation
-    spec:
+        instrumentation.opentelemetry.io/inject-python: otel-system/elastic-instrumentation
       containers:
         - name: python-app-container
           image: ghcr.io/chuno9/python-app:latest
