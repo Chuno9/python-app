@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/Chuno9/python-app
+  IMAGE_NAME: ghcr.io/chuno9/python-app
 
 jobs:
   build:
